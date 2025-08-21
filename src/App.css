@@ -1,0 +1,172 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.light-mode {
+  background: #f0f0f0;
+  color: #222;
+}
+
+.dark {
+  background: #121212;
+  color: #eee;
+}
+
+.navbar {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid rgb(149, 149, 149);
+}
+
+.dark .navbar {
+  background: #3b3b3b;
+}
+
+.main-container {
+  flex: 1;
+  display: flex;
+  height: calc(100vh - 50px);
+  overflow: hidden;
+}
+
+.left-pane, .right-pane {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.separator {
+  width: 1px;
+  background: rgb(101, 101, 101);
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.drop-area {
+  flex: 3;
+  border: 2px dashed #999;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dragging {
+  background: #ccc;
+}
+
+.jd-input {
+  flex: 6;
+  margin: 20px 0;
+}
+
+textarea.job-desc {
+  width: 95%;
+  height: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: none;
+  background: white;
+  color: black;
+}
+
+/* Dark Mode Style */
+.dark textarea.job-desc {
+  background: #1e1e1e;
+  color: #ddd;
+  border: 1px solid #444;
+}
+
+
+.submit-btn-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.submit-btn {
+  margin-top:10px;
+  padding: 10px 30px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dark .submit-btn {
+  margin-top:10px;
+  background: #3399ff;
+}
+
+.dark-toggle {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: inherit;
+  cursor: pointer;
+}
+
+.result-box {
+  background: #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.dark .result-box {
+  background: #222;
+}
+
+.spinner .loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .left-pane, .right-pane {
+    width: 100%;
+  }
+
+  .separator {
+    height: 1px;
+    width: 100%;
+  }
+
+}

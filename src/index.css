@@ -1,0 +1,176 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+.light-mode {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.navbar {
+  height: 50px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+}
+
+.logo {
+  font-weight: 600;
+}
+
+.dark-toggle {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+
+.main-content {
+  flex: 1;
+  display: flex;
+  height: 100%;
+}
+
+.left-panel, .right-panel {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.drop-area {
+  flex: 3;
+  border: 2px dashed #aaa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 10px;
+  background: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.job-desc {
+  flex: 6;
+  resize: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.submit-btn {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.result-heading {
+  margin-bottom: 10px;
+}
+
+.result-box {
+  background: #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.dark .drop-area,
+.dark .result-box {
+  background: #1f1f1f;
+  border-color: #555;
+}
+
+.spinner-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.spinner-circle {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #fff;
+  border-top: 6px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.spinner-container p {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+  .left-panel, .right-panel {
+    width: 100%;
+    height: 50%;
+  }
+}
+
+.footer-resume-screener {
+  text-align: right;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #f0f0f0;
+  color: #222;
+  font-weight: lighter;
+  font-size: 8px;
+  position: relative;
+  font-style: italic;
+}
+
+/* Dark mode overrides */
+.dark .footer-resume-screener {
+  background-color: #121212;
+  color: #aaa;
+}
